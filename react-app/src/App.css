@@ -1,0 +1,16 @@
+#neopixels {
+  position: relative;
+  border: 1px solid black;
+  height: 500px;
+  width: 500px;
+}
+
+.pixel {
+  position: absolute;
+  cursor: pointer;
+  border: 3px solid black;
+}
+
+.selected {
+  border: 3px solid blue;
+}
