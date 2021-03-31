@@ -27,11 +27,13 @@ Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 // WiFi setup
 int status = WL_IDLE_STATUS;     // the WiFi radio's status
 WiFiClient wifiClient;
+//String ssid[] = { "yale wireless", "vagrantwifi", "FJORD" };
+//String password[] = {"", "whatthefooklydook", "WTJ7EZ00" };
 
 // MQTT setup
 const char broker[] = "test.mosquitto.org";
 int        port     = 1883;
-const char topic[]  = "ceid-workshop/simple";
+const char topic[]  = "ceid-workshop";
 MqttClient mqttClient(wifiClient);
 
 void setup() {
@@ -85,7 +87,6 @@ void loop() {
   int messageSize = mqttClient.parseMessage();
 
   // if message received
-  
   if (messageSize) {
     StaticJsonDocument<2048> doc;
     DeserializationError err = deserializeJson(doc, mqttClient);
@@ -97,9 +98,9 @@ void loop() {
     JsonArray blue = doc["blue"];
     lightNeopixels(red, green, blue);
     
-//    for(int i = 0; i < red.size(); i++) {
-//      Serial.print(red[i].as<int>());
-//    }
+    for(int i = 0; i < red.size(); i++) {
+      Serial.print(red[i].as<int>());
+    }
 
 
     // light neo

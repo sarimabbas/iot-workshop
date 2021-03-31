@@ -38,7 +38,7 @@ function App() {
   const [inputColor, setInputColor] = useState("ff0000");
   const [mqttBroker, setMqttBroker] = useState("test.mosquitto.org");
   const [mqttPort, setMqttPort] = useState(8081);
-  const [mqttTopic, setMqttTopic] = useState("ceid-workshop/simple");
+  const [mqttTopic, setMqttTopic] = useState("ceid-workshop");
 
   useEffect(() => {
     // maths
