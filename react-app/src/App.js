@@ -3,8 +3,8 @@ import { HexColorPicker, HexColorInput } from "react-colorful";
 import { useState, useEffect, useMemo } from "react";
 import "./App.css";
 
-var mqtt = require("mqtt");
-var client = mqtt.connect("ws://test.mosquitto.org:8081");
+// var mqtt = require("mqtt");
+// var client = mqtt.connect("ws://test.mosquitto.org:8081");
 
 const numPoints = 24;
 const circleOrigin = [250, 250];
@@ -198,7 +198,7 @@ function App() {
             onChange={(e) => setMqttTopic(e.currentTarget.value)}
           ></input>
           <button
-            onClick={() => client.publish(mqttTopic, JSON.stringify(payload))}
+            // onClick={() => client.publish(mqttTopic, JSON.stringify(payload))}
             type="button"
             style={{
               marginTop: "30px",
